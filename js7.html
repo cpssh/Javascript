@@ -1,0 +1,35 @@
+<html>
+<head>
+<script>
+a=0;
+i=0;
+function fun2(){
+a++;
+document.f1.t1.value=a;
+}
+function fun1()
+{ 
+i=setInterval('fun2()',100); 
+}
+function fun3()
+{
+clearTimeout(i);
+}
+function fun4()
+{
+a=0;
+clearTimeout(i);
+}
+
+
+</script>
+</head>
+<body>
+<form name="f1">
+<input type="text" id="t1" name="text">
+<input type="button" name="start" value="start" onclick="fun1()">
+<input type="button" value="pause" onclick="fun3()">
+<input type="button" value="stop" onclick="fun4()">
+</form>
+</body>
+</html>
